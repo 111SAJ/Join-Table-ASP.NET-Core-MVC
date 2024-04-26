@@ -1,0 +1,36 @@
+﻿@model List<Department>
+
+@{
+}
+
+<h2 class="text-center mb-5">List of Department</h2>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-outline-primary" asp-controller="Department" asp-action="Create">New Employee</a>
+    </div>
+    <div class="col">
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.DepartmentId</td>
+                <td>@department.DepartmentName</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-controller="EmployeeRegister" asp-action="Edit" asp-route-id="@department.DepartmentId">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="EmployeeRegister" asp-action="Delete" asp-route-id="@department.DepartmentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

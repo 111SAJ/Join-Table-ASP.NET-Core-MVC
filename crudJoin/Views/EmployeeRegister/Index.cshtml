@@ -1,0 +1,35 @@
+﻿@* @using crudJoin.ViewModel;
+ @model List<EmployeeDepartmentViewModel> *@
+@using crudJoin.ViewModel
+@model List<EmployeeDepartmentViewModel>
+
+@{
+}
+
+<h2 class="text-center mb-5">List of Employees</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Created On</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.EmployeeEmail</td>
+                <td>@employee.Address</td>
+                <td>@employee.LastUpdate.ToString("dd-MM-yyyy")</td>
+                <td>@employee.DepartmentName</td>
+            </tr>
+        }
+    </tbody>
+</table>
